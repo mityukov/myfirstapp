@@ -9,20 +9,21 @@ import android.widget.TextView;
 import android.app.Activity;
 
 public class ResultFragment extends Fragment {
+
     final static String ARG_MESSAGE = "message";
     String mMessage = "";
     
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-	// If activity recreated (such as from screen rotate), restore
+        // If activity recreated (such as from screen rotate), restore
         // the previous article selection set by onSaveInstanceState().
         // This is primarily necessary when in the two-pane layout.
         if (savedInstanceState != null) {
             mMessage = savedInstanceState.getString(ARG_MESSAGE);
         }
 
-	return inflater.inflate(R.layout.result_fragment, container, false);
+        return inflater.inflate(R.layout.result_fragment, container, false);
     }
 
     @Override
@@ -51,7 +52,7 @@ public class ResultFragment extends Fragment {
     
     @Override
     public void onSaveInstanceState(Bundle outState) {
-	super.onSaveInstanceState(outState);
+        super.onSaveInstanceState(outState);
 
         // Save the current article selection in case we need to recreate the fragment
         outState.putString(ARG_MESSAGE, mMessage);
